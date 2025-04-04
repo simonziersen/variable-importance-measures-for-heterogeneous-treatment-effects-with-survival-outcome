@@ -1,2 +1,2 @@
 Code used for simulation and analysis in:
-- [Causal effect on the number of life years lost due to a specific event: Average treatment effect and variable importance](https://www.arxiv.org/abs/2412.11790)
+- [Variable importance measures for heterogeneous treatment effects with survival outcome](https://www.arxiv.org/abs/2412.11790)
