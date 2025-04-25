@@ -161,7 +161,6 @@ covVimSurvRes <- function(time,
         tau_tmp <- resSurv(S, newX = confounders, newtimes = evaltimes, newA = 1) -
           resSurv(S, newX = confounders, newtimes = evaltimes, newA = 0)
         tau <- tau_tmp[k == i]
-        #taup <- mean(tau_tmp[k != i])
         taup <- mean(phi[k != i])
         
         taul_tmp <- lapply(seq_along(l), function(x){

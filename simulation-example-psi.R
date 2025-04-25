@@ -25,7 +25,7 @@ expit <- function(x) exp(x)/(1+exp(x))
 times <- 10                      # event horizon
 shape <- 2                      # shape parameter for weibull distributed event times 
 scale <- 0.0025                    # scale parameter for weibull distributed event times 
-n <- 1000
+n <- 500
 
   
 
@@ -105,8 +105,6 @@ RFprob <- teVimSurv(time = obsTime,
                                    pseudoReg = list(method = "rfsrc")),
                    evaltimes = times,
                    folds = 1)
-gc()
-cat("RF done")
 
 RFGAMprob <- teVimSurv(time = obsTime,
                    status = delta,
@@ -119,8 +117,6 @@ RFGAMprob <- teVimSurv(time = obsTime,
                                    pseudoReg = list(method = "gam", interactions = TRUE)),
                    evaltimes = times,
                    folds = 1)
-gc()
-cat("RFGAM done")
 
 RFCFprob <- teVimSurv(time = obsTime,
                      status = delta,
@@ -133,8 +129,6 @@ RFCFprob <- teVimSurv(time = obsTime,
                                      pseudoReg = list(method = "rfsrc")),
                      evaltimes = times,
                      folds = 10)
-gc()
-cat("RFCF done")
 
 RFGAMCFprob <- teVimSurv(time = obsTime,
                      status = delta,
@@ -147,8 +141,6 @@ RFGAMCFprob <- teVimSurv(time = obsTime,
                                      pseudoReg = list(method = "gam", interactions = TRUE)),
                      evaltimes = times,
                      folds = 10)
-gc()
-cat("RFGAMCF done")
 
 
 rescorrectprob <- rbind(c(unlist(correctGAMprob), method = "correctGAM"),
